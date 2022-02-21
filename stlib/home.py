@@ -1,5 +1,13 @@
 def run():
     import streamlit as st
+    
+    st.sidebar.header('Libraries:')
+    with st.sidebar.expander("NLTK"):
+        st.write("""Natural Language Toolkit is an open source Python library for Natural Language Processing.""")
+    with st.sidebar.expander("Sumy"):
+        st.write("""Sumy - Simple library and command line utility for extracting summary from HTML pages or plain texts.""")
+    with st.sidebar.expander("BERT"):
+        st.write("""BERT (Bidirectional tranformer) is a transformer used to overcome the limitations of RNN and other neural networks as Long term dependencies. It is a pre-trained model that is naturally bidirectional. This pre-trained model can be tuned to easily to perform the NLP tasks as specified, Summarization in our case..""")
 
     col1, mid, col2 = st.columns([1, 1, 20])
     with col1:
@@ -10,7 +18,6 @@ def run():
     """
     ---
     """
-    
     st.header("About Us")
     st.markdown(""" **LEX** is a text summarization tool which allows the user to copy and paste text and summarize its contents. Futhermore, LEX 
     can scrape a webpage (website security options may prevent scraping certain websites), or accept an uploaded file and summarize its contents. 
@@ -31,20 +38,6 @@ def run():
     "<br/>",
     unsafe_allow_html=True,
     )
-    st.header("Libraries")
-    st.info("NLTK - Natural Language Toolkit is an open source Python library for Natural Language Processing." )
-        
-    code =""">>> import nltk 
->>> nltk.download()"""
-    st.code(code, language='python')
-    """
-    ---
-    """
-    st.info("Sumy - Simple library / command line utility for extracting summary from HTML pages or plain texts." )
-    
-    code="""$ [sudo] pip install sumy 
-$ [sudo] pip install git+git://github.com/miso-belica/sumy.git"""
-    st.code(code, language='python')
 
     row2_spacer1, row2_1, row2_spacer2 = st.columns((0.1, 3.2, 0.1))
     with row2_1:
@@ -52,7 +45,6 @@ $ [sudo] pip install git+git://github.com/miso-belica/sumy.git"""
             "Input your own Goodreads Link (e.g. https://www.goodreads.com/user/show/89659767-tyler-richards)"
         )
         need_help = st.expander("Need help? 👉")
-
 
 if __name__ == "__main__":
     run()
