@@ -12,13 +12,8 @@ def run():
     with st.sidebar.expander("BERT"):
         st.write("""BERT (Bidirectional tranformer) is a transformer used to overcome the limitations of RNN and other neural networks as Long term dependencies. It is a pre-trained model that is naturally bidirectional. This pre-trained model can be tuned to easily to perform the NLP tasks as specified, Summarization in our case..""")
     
-    col1, mid, col2 = st.columns([1, 1, 20])
-    # with col1:
-    #     st.image(
-    #         "https://lh3.googleusercontent.com/z1SMpo9HHBl0yHXUrjDUCafhIxjVJ9wTBCwzvRQRq7iT-OUS7iVAfbp3PJ9qvlDWdaxIuwM3DOkyvCRFVzaVgUK9dXn9XhBsWR0zZJ5pz90U5duzCFRlcPgBoJHTJrIwtnG2xCHykQ=w2400",
-    #         width=320,
-    #     )
-    
+ 
+
     # --------------------------------- Homepage --------------------------------- #
     
     st.header("LEX - TEXT SUMMARIZATION AND NLP ENGINE")
