@@ -7,8 +7,15 @@ def run():
     import streamlit.components.v1 as components
     from nltk.corpus import stopwords
     from typing import ByteString
+    from wordcloud import WordCloud
+    from dash import Dash, dcc, html
+    import plotly.express as px
+    import plotly.figure_factory as ff
+    import tkinter as tk
+    import matplotlib.pyplot as plt
     import urllib.request
     import streamlit as st
+    import scipy as sp
     import pandas as pd
     import numpy as np
     import validators
@@ -29,66 +36,14 @@ def run():
     Submit the error message to **support@stackmetric.com** for anything more.
     This app is not optimized to summarize less tha 1,000 words and other limitations apply."""
     )
-    
     # components.html("""<hr style="height:5px;border:none;color:#035495;background-color:#035495;" /> """)
     option = st.selectbox(
      'Please select input method below:',
-     ('---', 'Input Text', 'Upload File'))
+     ('---', 'Input Text', 'Paste a Link','Upload File'))
     
     s_example = "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a line in section 1.10.32.The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from de Finibus Bonorum et Malorum by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham."
     
-    # ---------------------------------- Function --------------------------------- #
-
-    def paste():
-        # Raw Text
-        text = re.sub(r'\[[0-9]*\]', ' ', text_input)
-        text = re.sub(r'\s+', ' ', text_input)
-
-        # Clean Text
-        clean_text = text.lower()
-        clean_text = re.sub(r'\W', ' ', clean_text)
-        clean_text = re.sub(r'\d', ' ', clean_text)
-        clean_text = re.sub(r'\s+', ' ', clean_text)
-        stopwords = nltk.corpus.stopwords.words('english')
-        word_frequency = nltk.FreqDist(nltk.word_tokenize
-                                        (clean_text))
-        # Word Dictionary
-        word2count = {}
-        for word in nltk.word_tokenize(clean_text):
-            if word not in stopwords:
-                if word not in word2count.keys():
-                    word2count[word] = 1
-                else:
-                    word2count[word] += 1
-
-        highest_frequency = max(word2count.values())
-        highest_frequency
-
-        # Weighted Words
-        for word in word2count.keys():
-            word2count[word] = (word2count[word] / highest_frequency)
-
-        # Tokenize sentences
-        sentences = nltk.sent_tokenize(text)
-
-        # Sentence Dictionary
-        sent2score = {}
-        for sentence in sentences:
-            for word in nltk.word_tokenize(sentence.lower()):
-                if word in word2count.keys():
-                    if len(sentence.split(' ')) < 25:
-                        if sentence not in sent2score.keys():
-                            sent2score[sentence] = word2count[word]
-                        else:
-                            sent2score[sentence] += word2count[word]
-
-        best_sentences = heapq.nlargest(10, sent2score, key=sent2score.get)
-        summary = ' '.join(best_sentences)
-        summary
-
-    # ------------------------------- END Function --------------------------------- #
-
-    st.text('')
+    # ---------------------------------- Text --------------------------------- #
 
     if option == 'Input Text':
         text_input = st.text_area("Use the example below or input your own \
@@ -100,11 +55,10 @@ def run():
             else:
                 with st.spinner('Processing...'):
                     time.sleep(2)
-
-                    # Raw Text
+                    st.text('')
                     text = re.sub(r'\[[0-9]*\]', ' ', text_input)
                     text = re.sub(r'\s+', ' ', text_input)
-                    
+
                     # Clean Text
                     clean_text = text.lower()
                     clean_text = re.sub(r'\W', ' ', clean_text)
@@ -113,6 +67,130 @@ def run():
                     stopwords = nltk.corpus.stopwords.words('english')
                     word_frequency = nltk.FreqDist(nltk.word_tokenize
                                                     (clean_text))
+                    # Word Dictionary
+                    word2count = {}
+                    for word in nltk.word_tokenize(clean_text):
+                        if word not in stopwords:
+                            if word not in word2count.keys():
+                                word2count[word] = 1
+                            else:
+                                word2count[word] += 1
+
+                    highest_frequency = max(word2count.values())
+                    highest_frequency
+
+                    # Weighted Words
+                    for word in word2count.keys():
+                        word2count[word] = (word2count[word] / highest_frequency)
+
+                    # Tokenize sentences
+                    sentences = nltk.sent_tokenize(text)
+
+                    # Sentence Dictionary
+                    sent2score = {}
+                    for sentence in sentences:
+                        for word in nltk.word_tokenize(sentence.lower()):
+                            if word in word2count.keys():
+                                if len(sentence.split(' ')) < 25:
+                                    if sentence not in sent2score.keys():
+                                        sent2score[sentence] = word2count[word]
+                                    else:
+                                        sent2score[sentence] += word2count[word]
+
+                    best_sentences = heapq.nlargest(10, sent2score, key=sent2score.get)
+                    summary = ' '.join(best_sentences)
+                    summary
+                    st.write(summary)
+                    st.write("Word Cloud")
+                    st.set_option('deprecation.showPyplotGlobalUse', False)
+                    wordcloud = WordCloud(background_color = "#f2f8fb", width=800, height=400).generate(summary)
+                    plt.imshow(wordcloud, interpolation='bilinear')
+                    plt.axis("off")
+                    plt.show()
+                    st.pyplot()
+                    
+                    # ---------------------------------- END Text --------------------------------- #
+    # ---------------------------------- Link --------------------------------- #
+
+    if option == 'Paste a Link':
+        source_txt = st.text_input("")
+        if st.button('Paste a Link'):
+            if 'https://' in source_txt:
+                with st.spinner('Processing...'):
+                    time.sleep(2)
+
+                    # Retrieve data
+                    URL = source_txt
+
+                    # Open the URL
+                    page = urllib.request.Request(URL)
+                    result = urllib.request.urlopen(page)
+
+                    # Store the HTML page in a variable
+                    resulttext = result.read()
+
+                    # Parsing the data/ creating BeautifulSoup object
+                    soup = bs.BeautifulSoup(resulttext, 'lxml')
+
+                    # Fetching the data
+                    text = ""
+                    for paragraph in soup.find_all('p'):
+                        text += paragraph.text
+
+                    # Raw Text
+                    text = re.sub(r'\[[0-9]*\]', ' ', text)
+                    text = re.sub(r'\s+', ' ', text)
+
+                    # Clean Text
+                    clean_text = text.lower()
+                    clean_text = re.sub(r'\W', ' ', clean_text)
+                    clean_text = re.sub(r'\d', ' ', clean_text)
+                    clean_text = re.sub(r'\s+', ' ', clean_text)
+
+                    stopwords = nltk.corpus.stopwords.words('english')
+                    word_frequency = nltk.FreqDist(nltk.word_tokenize(clean_text))
+                    sentences = nltk.sent_tokenize(text)
+
+                    # Create a `dictionary` and name it word2count where words [keys] and counts [values]
+                    word2count = {}
+                    for word in nltk.word_tokenize(clean_text):
+                        if word not in stopwords:
+                            if word not in word2count.keys():
+                                word2count[word] = 1
+                            else:
+                                word2count[word] += 1
+
+                    highest_frequency = max(word2count.values())
+                    highest_frequency
+
+                    for word in word2count.keys():
+                        word2count[word] = (word2count[word] / highest_frequency)
+
+                    sent2score = {}
+                    for sentence in sentences:
+                        for word in nltk.word_tokenize(sentence.lower()):
+                            if word in word2count.keys():
+                                if len(sentence.split(' ')) < 25:
+                                    if sentence not in sent2score.keys():
+                                        sent2score[sentence] = word2count[word]
+                                    else:
+                                        sent2score[sentence] += word2count[word]
+
+                    best_sentences = heapq.nlargest(10, sent2score, key=sent2score.get)
+                    summary = ' '.join(best_sentences)
+                    summary
+                    st.write(summary)
+
+                    st.write("Word Cloud")
+                    st.set_option('deprecation.showPyplotGlobalUse', False)
+                    wordcloud = WordCloud(background_color = "#f2f8fb", width=800, height=400).generate(summary)
+                    plt.imshow(wordcloud, interpolation='bilinear')
+                    plt.axis("off")
+                    plt.show()
+                    st.pyplot()
+               
+            else:
+                st.error('Please enter a valid link')
 
 
 # end of app
