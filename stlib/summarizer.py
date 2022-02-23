@@ -1,18 +1,18 @@
-import streamlit as st
+
 
 def run():
- 
+
     # Libraries
     from nltk.tokenize import word_tokenize, sent_tokenize
     import streamlit.components.v1 as components
     from nltk.corpus import stopwords
     from typing import ByteString
     from wordcloud import WordCloud
-    from dash import Dash, dcc, html
+    from bokeh.plotting import figure
     import plotly.express as px
-    import plotly.figure_factory as ff
     import tkinter as tk
     import matplotlib.pyplot as plt
+    import nlplot
     import urllib.request
     import streamlit as st
     import scipy as sp
@@ -151,6 +151,7 @@ def run():
                     word_frequency = nltk.FreqDist(nltk.word_tokenize(clean_text))
                     sentences = nltk.sent_tokenize(text)
 
+        
                     # Create a `dictionary` and name it word2count where words [keys] and counts [values]
                     word2count = {}
                     for word in nltk.word_tokenize(clean_text):
@@ -159,6 +160,9 @@ def run():
                                 word2count[word] = 1
                             else:
                                 word2count[word] += 1
+                    
+                    st.write(npt.bar_ngram(title='Word count(one word)', ngram = 1, top_n = 20, stopwords = stopwords, width = 800, height = 700))
+                    st.write(word2count)
 
                     highest_frequency = max(word2count.values())
                     highest_frequency
