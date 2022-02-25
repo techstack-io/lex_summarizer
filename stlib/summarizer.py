@@ -12,7 +12,6 @@ def run():
     import plotly.express as px
     import tkinter as tk
     import matplotlib.pyplot as plt
-    import nlplot
     import urllib.request
     import streamlit as st
     import scipy as sp
@@ -161,12 +160,9 @@ def run():
                             else:
                                 word2count[word] += 1
                     
-                    st.write(npt.bar_ngram(title='Word count(one word)', ngram = 1, top_n = 20, stopwords = stopwords, width = 800, height = 700))
-                    st.write(word2count)
-
                     highest_frequency = max(word2count.values())
                     highest_frequency
-
+                   
                     for word in word2count.keys():
                         word2count[word] = (word2count[word] / highest_frequency)
 
@@ -184,13 +180,13 @@ def run():
                     summary = ' '.join(best_sentences)
                     summary
                     st.write(summary)
-
+                    st.components.v1.iframe("//plotly.com/~stackmetric/4.embed", width=None, height=600, scrolling=False)
                     st.write("Word Cloud")
                     st.set_option('deprecation.showPyplotGlobalUse', False)
                     wordcloud = WordCloud(background_color = "#f2f8fb", width=800, height=400).generate(summary)
                     plt.imshow(wordcloud, interpolation='bilinear')
                     plt.axis("off")
-                    plt.show()
+                    # plt.show()
                     st.pyplot()
                
             else:
