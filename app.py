@@ -89,56 +89,58 @@ if option == 'Input Text':
                                     sent2score[sentence] = word2count[word]
                                 else:
                                     sent2score[sentence] += word2count[word]
-               
+
                 best_sentences = heapq.nlargest(10, sent2score, key=sent2score.get)
                 summary = ' '.join(best_sentences)
                 st.write(summary)
+
                 # --------------------------- Sort Words2count dict -------------------------- #
                 dict2list=list(word2count.items())
                 # Whole list
                 dict2list = sorted(word2count.items(), key=lambda x:x[1], reverse=True)
-                #! dict sorted not indexed (whole dictionary)
+                # dict sorted not indexed (whole dictionary)
                 sortdict = dict(dict2list)
                 sortdict
-                #* sorted list of weighted words (descending x7)
+                # sorted list of weighted words (descending x7)
                 weighted_words_des = dict2list[:7]
                 # weighted_words_des
 
                 d=dict(weighted_words_des)
-                # Sorted dictionary! 
+                # Sorted dictionary!
                 d
                 keys = d.keys()
                 keys
                 val = d.values()
                 val
 
-                x=keys
-                y=val
-                print(weighted_words_des)
+                x_axis = list(keys)
+                x_axis
+                y_axis = list(val)
+                y_axis 
 
+                order = [1, 2, 3, 4, 5, 6, 7]
+                data = {
+                    "Order: highest rated word first": order,
+                    "Words": x_axis,
+                    "Weight": y_axis
+                }
+
+                df = pd.DataFrame(data)
+
+                st.table(df)
+
+                # --------------------
                 trace0 = go.Scatter(
-
-                    x = weighted_words_des, 
-                    y = weighted_words_des
-                    # x=['qeeg', 'brain', 'death', 'case', 'science', 'penalty' , 'could', 'court'],
-                    # y=[1, 0.923076923, 0.538461538, 0.461538462, 0.384615385, 0.346153846, 0.346153846, 0.307692308]
+                    x = x_axis,
+                    y = y_axis
                 )
                 data = [trace0]
-
-                fig = px.scatter( x=['qeeg', 'brain', 'death', 'case', 'science', 'penalty' , 'could', 'court'],  y=[1, 0.923076923, 0.538461538, 0.461538462, 0.384615385, 0.346153846, 0.346153846, 0.307692308])
+                # --------------------
+                
+                fig = px.scatter( x_axis,  y_axis)
 
                 st.write(data)
                 st.subheader('Weighted Words')
                 st.plotly_chart(fig)
-# trace0 = go.Scatter(
-#     x=[1, 2, 3, 4],
-#     y=[10, 15, 13, 17]
-# )
-# trace1 = go.Scatter(
-#     x=[1, 2, 3, 4],
-#     y=[16, 5, 11, 9]
-# )
-# data = [trace0, trace1]
 
-# py.plot(data, filename = 'basic-line', auto_open=True)
 
