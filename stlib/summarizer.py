@@ -4,27 +4,33 @@ def run():
 
     # Libraries
     from nltk.tokenize import word_tokenize, sent_tokenize
+    import streamlit as st
     import streamlit.components.v1 as components
     from nltk.corpus import stopwords
     from typing import ByteString
+    # Chart and Plotly libs
     from wordcloud import WordCloud
-    from bokeh.plotting import figure
     import plotly.express as px
+    import chart_studio
+    # -
     import tkinter as tk
     import matplotlib.pyplot as plt
-    import urllib.request
-    import streamlit as st
     import scipy as sp
     import pandas as pd
     import numpy as np
     import validators
+    # Beautiful Soup & urllib
     import bs4 as bs
+    import urllib.request
+    # -
     import requests
     import string
     import heapq
     import time
     import nltk
     import re
+
+    # ---------------------------------------------------------------------------- #
 
     st.header("SUMMARIZER")
     st.write(
@@ -35,18 +41,19 @@ def run():
     Submit the error message to **support@stackmetric.com** for anything more.
     This app is not optimized to summarize less tha 1,000 words and other limitations apply."""
     )
-    # components.html("""<hr style="height:5px;border:none;color:#035495;background-color:#035495;" /> """)
+
     option = st.selectbox(
      'Please select input method below:',
      ('---', 'Input Text', 'Paste a Link','Upload File'))
-    
+
     s_example = "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a line in section 1.10.32.The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from de Finibus Bonorum et Malorum by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham."
-    
-    # ---------------------------------- Text --------------------------------- #
+
+    # -------------------------------- Text Input -------------------------------- #
 
     if option == 'Input Text':
         text_input = st.text_area("Use the example below or input your own \
             text in English (between 1,000 and 10,000 characters)", value=s_example, max_chars=10000, height=330)
+
         if st.button('Summarize'):
             if len(text_input) < 1000:
                 st.error('Please enter a text in English of minimum 1,000 \
@@ -55,6 +62,8 @@ def run():
                 with st.spinner('Processing...'):
                     time.sleep(2)
                     st.text('')
+
+                    # Raw Text
                     text = re.sub(r'\[[0-9]*\]', ' ', text_input)
                     text = re.sub(r'\s+', ' ', text_input)
 
@@ -100,16 +109,52 @@ def run():
                     summary = ' '.join(best_sentences)
                     summary
                     st.write(summary)
+                    # Wordcloud
                     st.write("Word Cloud")
-                    st.set_option('deprecation.showPyplotGlobalUse', False)
+                    
                     wordcloud = WordCloud(background_color = "#f2f8fb", width=800, height=400).generate(summary)
                     plt.imshow(wordcloud, interpolation='bilinear')
                     plt.axis("off")
                     plt.show()
                     st.pyplot()
-                    
-                    # ---------------------------------- END Text --------------------------------- #
-    # ---------------------------------- Link --------------------------------- #
+
+                    # ------------------------------- Plotly Charts ------------------------------ #
+
+                    # ------------ Lists ------------- #
+
+                    # Convert word2count dict to a list
+                    dict2list=list(word2count.items())
+
+                    # Sort list in descending order
+                    dict2list = sorted(word2count.items(), key=lambda x:x[1], reverse=True)
+
+                    # First 7 words in sorted list of weighted words in descending order
+                    weighted_words_des = dict2list[:7]
+
+                    # ------------ Dicts --------------------- #
+
+                    # Covert sorted list back to dict (this is the complete dict)
+                    sortdict = dict(dict2list)
+
+                    # Sorted dict
+                    d=dict(weighted_words_des)
+
+                    # Separate keys and values
+                    keys = d.keys()
+                    val = d.values()
+
+                    # Convert keys and values into a list
+                    # This will be our x and y axis for our chart
+                    x_axis = list(keys)
+                    y_axis = list(val)
+
+                    fig = px.bar(x=x_axis, y=y_axis, labels=dict(x="Words", y="Weight", color="Place"))
+                    st.subheader('Weighted Words')
+                    st.plotly_chart(fig)
+
+                    # END Tex Input #
+
+    # -------------------------------- Link Input -------------------------------- #
 
     if option == 'Paste a Link':
         source_txt = st.text_input("")
@@ -150,7 +195,7 @@ def run():
                     word_frequency = nltk.FreqDist(nltk.word_tokenize(clean_text))
                     sentences = nltk.sent_tokenize(text)
 
-        
+
                     # Create a `dictionary` and name it word2count where words [keys] and counts [values]
                     word2count = {}
                     for word in nltk.word_tokenize(clean_text):
@@ -159,10 +204,10 @@ def run():
                                 word2count[word] = 1
                             else:
                                 word2count[word] += 1
-                    
+
                     highest_frequency = max(word2count.values())
                     highest_frequency
-                   
+
                     for word in word2count.keys():
                         word2count[word] = (word2count[word] / highest_frequency)
 
@@ -180,7 +225,6 @@ def run():
                     summary = ' '.join(best_sentences)
                     summary
                     st.write(summary)
-                    st.components.v1.iframe("//plotly.com/~stackmetric/4.embed", width=None, height=600, scrolling=False)
                     st.write("Word Cloud")
                     st.set_option('deprecation.showPyplotGlobalUse', False)
                     wordcloud = WordCloud(background_color = "#f2f8fb", width=800, height=400).generate(summary)
@@ -188,6 +232,42 @@ def run():
                     plt.axis("off")
                     # plt.show()
                     st.pyplot()
+                    
+                    # ------------------------------- Plotly Charts ------------------------------ #
+
+                    # ------------ Lists ------------- #
+
+                    # Convert word2count dict to a list
+                    dict2list=list(word2count.items())
+
+                    # Sort list in descending order
+                    dict2list = sorted(word2count.items(), key=lambda x:x[1], reverse=True)
+
+                    # First 7 words in sorted list of weighted words in descending order
+                    weighted_words_des = dict2list[:7]
+
+                    # ------------ Dicts --------------------- #
+
+                    # Covert sorted list back to dict (this is the complete dict)
+                    sortdict = dict(dict2list)
+
+                    # Sorted dict
+                    d=dict(weighted_words_des)
+
+                    # Separate keys and values
+                    keys = d.keys()
+                    val = d.values()
+
+                    # Convert keys and values into a list
+                    # This will be our x and y axis for our chart
+                    x_axis = list(keys)
+                    y_axis = list(val)
+
+                    fig = px.bar(x=x_axis, y=y_axis, labels=dict(x="Words", y="Weight", color="Place"))
+                    st.subheader('Weighted Words')
+                    st.plotly_chart(fig)
+
+                    # END Tex Input #
                
             else:
                 st.error('Please enter a valid link')

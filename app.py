@@ -36,7 +36,7 @@ option = st.selectbox(
 
 s_example = "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a line in section 1.10.32.The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from de Finibus Bonorum et Malorum by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham."
     
-# ---------------------------------- Text --------------------------------- #
+# ---------------------------------- Text Input --------------------------------- #
 
 if option == 'Input Text':
     text_input = st.text_area("Use the example below or input your own \
@@ -94,52 +94,38 @@ if option == 'Input Text':
                 summary = ' '.join(best_sentences)
                 st.write(summary)
 
-                # --------------------------- Sort Words2count dict -------------------------- #
+                # ------------------------------- Plotly Charts ------------------------------ #
+
+                # ------------ Lists ------------- #
+
+                # Convert word2count dict to a list
                 dict2list=list(word2count.items())
-                # Whole list
+
+                # Sort list in descending order
                 dict2list = sorted(word2count.items(), key=lambda x:x[1], reverse=True)
-                # dict sorted not indexed (whole dictionary)
-                sortdict = dict(dict2list)
-                sortdict
-                # sorted list of weighted words (descending x7)
+
+                # First 7 words in sorted list of weighted words in descending order
                 weighted_words_des = dict2list[:7]
-                # weighted_words_des
 
+                # ------------ Dicts --------------------- #
+
+                # Covert sorted list back to dict (this is the complete dict)
+                sortdict = dict(dict2list)
+
+                # Sorted dict
                 d=dict(weighted_words_des)
-                # Sorted dictionary!
-                d
+
+                # Separate keys and values
                 keys = d.keys()
-                keys
                 val = d.values()
-                val
 
+                # Convert keys and values into a list
+                # This will be our x and y axis for our chart
                 x_axis = list(keys)
-                x_axis
                 y_axis = list(val)
-                y_axis 
 
-                order = [1, 2, 3, 4, 5, 6, 7]
-                data = {
-                    "Order: highest rated word first": order,
-                    "Words": x_axis,
-                    "Weight": y_axis
-                }
+                fig = px.bar(x=x_axis, y=y_axis)
 
-                df = pd.DataFrame(data)
-
-                st.table(df)
-
-                # --------------------
-                trace0 = go.Scatter(
-                    x = x_axis,
-                    y = y_axis
-                )
-                data = [trace0]
-                # --------------------
-                
-                fig = px.scatter( x_axis,  y_axis)
-
-                st.write(data)
                 st.subheader('Weighted Words')
                 st.plotly_chart(fig)
 
