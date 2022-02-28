@@ -5,13 +5,14 @@ def run():
   from streamlit_lottie import st_lottie
   import requests
   
+  st.header("Dan and Tom are busy running the numbers..."
   def load_lottieurl(url: str):
       r = requests.get(url)
       if r.status_code != 200:
           return None
       return r.json()
 
-  lottie_url = "https://assets1.lottiefiles.com/packages/lf20_vzhkfj8e.json"
+  lottie_url = "https://assets7.lottiefiles.com/private_files/lf30_NpDT73.json"
   lottie_json = load_lottieurl(lottie_url)
   st_lottie(lottie_json)
 
