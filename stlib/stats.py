@@ -5,7 +5,8 @@ def run():
   from streamlit_lottie import st_lottie
   import requests
   
-  st.header("Dan and Tom are busy running the numbers..."
+  st.title("Dan and Tom are busy running the numbers..."
+            
   def load_lottieurl(url: str):
       r = requests.get(url)
       if r.status_code != 200:
