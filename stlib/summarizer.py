@@ -61,8 +61,10 @@ def run():
                     text = re.sub(r'\[[0-9]*\]', ' ', text_input)
                     text = re.sub(r'\s+', ' ', text_input)
 
-                    # Clean Text
+                    nltk.download('punkt')
                     nltk.download('stopwords')
+                    
+                    # Clean Text
                     clean_text = text.lower()
                     clean_text = re.sub(r'\W', ' ', clean_text)
                     clean_text = re.sub(r'\d', ' ', clean_text)
