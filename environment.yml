@@ -1,0 +1,19 @@
+name: stats
+dependencies:
+  - python
+  - pip:
+    - numpy
+    - pandas
+    - streamlit
+    - nltk
+    - wordcloud
+    - plotly.express
+    - chart_studio
+    - bs4
+    - urllib
+    - request
+    - requests
+    - string
+    - heapq
+    - time
+    - re
