@@ -11,6 +11,5 @@ dependencies:
     - plotly.express
     - chart_studio
     - bs4
-    - heapq
     - time
     - re
