@@ -2,12 +2,12 @@ name: stats
 dependencies:
   - python
   - pip
-  - pip:
-    - numpy
-    - pandas
-    - streamlit
-    - nltk
-    - wordcloud
-    - plotly.express
-    - chart_studio
-    - bs4
+  - numpy
+  - pandas
+  - streamlit
+  - nltk
+  - wordcloud
+  - plotly.express
+  - chart_studio
+  - bs4
+  - tkinter
