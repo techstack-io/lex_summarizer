@@ -5,15 +5,15 @@ def run():
     from streamlit_lottie import st_lottie
     from streamlit_lottie import st_lottie_spinner
 
-    def load_lottieurl(url: "https://assets10.lottiefiles.com/packages/lf20_jYTS0r.json"):
+    def load_lottieurl(url: str):
      r = requests.get(url)
      if r.status_code != 200:
          return None
      return r.json()
 
-# lottie_url = "https://assets10.lottiefiles.com/packages/lf20_jYTS0r.json"
-# lottie_json = load_lottieurl(lottie_url)
-# st.lottie("https://assets10.lottiefiles.com/packages/lf20_jYTS0r.json")
+lottie_url = "https://assets10.lottiefiles.com/packages/lf20_jYTS0r.json"
+lottie_json = load_lottieurl(lottie_url)
+st_lottie(lottie_json)
 
 # end of app
 
