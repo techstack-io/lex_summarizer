@@ -1,6 +1,7 @@
 name: stats
 dependencies:
   - python
+  - pip
   - pip:
     - numpy
     - pandas
