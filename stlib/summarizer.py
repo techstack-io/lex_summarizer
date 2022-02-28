@@ -62,6 +62,7 @@ def run():
                     text = re.sub(r'\s+', ' ', text_input)
 
                     # Clean Text
+                    nltk.download('stopwords')
                     clean_text = text.lower()
                     clean_text = re.sub(r'\W', ' ', clean_text)
                     clean_text = re.sub(r'\d', ' ', clean_text)
