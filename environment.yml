@@ -10,7 +10,6 @@ dependencies:
     - plotly.express
     - chart_studio
     - bs4
-    - string
     - heapq
     - time
     - re
