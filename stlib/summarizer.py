@@ -110,7 +110,7 @@ def run():
                     plt.imshow(wordcloud, interpolation='bilinear')
                     plt.axis("off")
                     plt.show()
-                    st.pyplot()
+                    # st.pyplot()
 
                     # Plotly Charts #
                     
@@ -225,7 +225,7 @@ def run():
                     plt.imshow(wordcloud, interpolation='bilinear')
                     plt.axis("off")
                     # plt.show()
-                    st.pyplot()
+                    # st.pyplot()
                     
                     # ------------------------------- Plotly Charts ------------------------------ #
 
