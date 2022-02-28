@@ -12,3 +12,4 @@ dependencies:
     - chart_studio
     - bs4
     - lxml
+    - streamlit-lottie
