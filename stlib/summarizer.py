@@ -13,7 +13,6 @@ def run():
     import plotly.express as px
     import chart_studio
     # -
-    import tkinter as tk
     import matplotlib.pyplot as plt
     import scipy as sp
     import pandas as pd
