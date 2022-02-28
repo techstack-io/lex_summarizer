@@ -32,9 +32,6 @@ def run():
 
     # ---------------------------------------------------------------------------- #
 
-    import sys
-    print(sys.executable)
-
     st.header("SUMMARIZER")
     st.write(
     """**LEX** is a text summarization tool which allows the user to copy and paste text and summarize its contents. In this section LEX
