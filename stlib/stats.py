@@ -11,11 +11,10 @@ def run():
           return None
       return r.json()
 
-  lottie_url = "https://assets7.lottiefiles.com/private_files/lf30_NpDT73.json"
+  lottie_url = "https://assets7.lottiefiles.com/packages/lf20_lkrmmg9c.json"
   lottie_json = load_lottieurl(lottie_url)
   st_lottie(lottie_json)
-  
-  st.title("Dan and Tom are busy running the numbers..."
+
 
 # end of app
 
