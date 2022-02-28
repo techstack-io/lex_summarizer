@@ -1,5 +1,6 @@
 name: stats
 dependencies:
+  - stop-words
   - python
   - pip
   - pip:
@@ -11,4 +12,3 @@ dependencies:
     - plotly.express
     - chart_studio
     - bs4
-    - stopwords
