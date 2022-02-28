@@ -12,7 +12,7 @@ def run():
      return r.json()
 
 lottie_url = "https://assets10.lottiefiles.com/packages/lf20_jYTS0r.json"
-lottie_json = load_lottieurl(lottie_url)
+lottie_json = lottie_url
 st_lottie(lottie_json)
 
 # end of app
