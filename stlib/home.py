@@ -39,12 +39,5 @@ def run():
     unsafe_allow_html=True,
     )
 
-    row2_spacer1, row2_1, row2_spacer2 = st.columns((0.1, 3.2, 0.1))
-    with row2_1:
-        user_input = st.text_input(
-            "Input your own Goodreads Link (e.g. https://www.goodreads.com/user/show/89659767-tyler-richards)"
-        )
-        need_help = st.expander("Need help? 👉")
-
 if __name__ == "__main__":
     run()
