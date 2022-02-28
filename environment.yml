@@ -2,7 +2,7 @@ name: stats
 dependencies:
   - python
   - pip
-  -pip:
+  - pip:
     - numpy
     - pandas
     - streamlit
