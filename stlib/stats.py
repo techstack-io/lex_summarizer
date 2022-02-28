@@ -5,7 +5,7 @@ def run():
   from streamlit_lottie import st_lottie
   import requests
   
-  st.title("Dan and Tom are busy running the numbers..."
+#   st.title("Dan and Tom are busy running the numbers..."
             
   def load_lottieurl(url: str):
       r = requests.get(url)
