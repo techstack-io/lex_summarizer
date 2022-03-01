@@ -29,12 +29,10 @@
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://lh3.googleusercontent.com/K_eyKIOSZhM2SRPbSn4tEmv5jmVqbF-RlxFmT3myMPx-DNDKEZZ_JDpDuL-b_zDz3eJbmedzhehiW04Pc7yyNh9ZTkx7bVi1FXE6btpYSPvwzteL-QZsmNKIdjfMj_5JNC_0AfsEAw=w400)
 
 There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
 
