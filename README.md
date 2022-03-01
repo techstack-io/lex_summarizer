@@ -1,6 +1,5 @@
 ![Stackmetric-y](https://user-images.githubusercontent.com/81205746/156105917-a0cd82dc-97af-4e95-a3a6-ba50ad186e12.png)
-
-<hr/>
+<ul>
 <div id="top"></div>
 
 <!-- TABLE OF CONTENTS -->
