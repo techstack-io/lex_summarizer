@@ -6,10 +6,8 @@
 # About The Project
 <br/>
  
-![lex_logo](https://user-images.githubusercontent.com/81205746/156106755-dbb6c241-1f67-464c-b603-3cee9b5da394.png)
-
-![lex_logo](https://user-images.githubusercontent.com/81205746/156107221-e6a67f73-8a2e-4c26-9076-d74111232668.png)
-
+https://lh3.googleusercontent.com/bnt_9N5qxjVLZoZl3Vxj2Li44PUEQ4FObzidGnCgfBlxVZHHUicwAKFw7wWDg1F-ayMwO3NZ_VNUJw86gTrf5PuQ80Ma806oYn3JCiyTZ7_Cv_cJAW1HKlQzNFw5xYrih38URQMYNQ=w400
+ 
 ![lex-200](https://lh3.googleusercontent.com/K_eyKIOSZhM2SRPbSn4tEmv5jmVqbF-RlxFmT3myMPx-DNDKEZZ_JDpDuL-b_zDz3eJbmedzhehiW04Pc7yyNh9ZTkx7bVi1FXE6btpYSPvwzteL-QZsmNKIdjfMj_5JNC_0AfsEAw=w250)
 
 LEX - TEXT SUMMARIZATION AND NLP ENGINE
