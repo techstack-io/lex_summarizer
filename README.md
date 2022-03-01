@@ -8,7 +8,7 @@
  
 
  
-![lex-200](https://lh3.googleusercontent.com/bnt_9N5qxjVLZoZl3Vxj2Li44PUEQ4FObzidGnCgfBlxVZHHUicwAKFw7wWDg1F-ayMwO3NZ_VNUJw86gTrf5PuQ80Ma806oYn3JCiyTZ7_Cv_cJAW1HKlQzNFw5xYrih38URQMYNQ=w400)
+![lex-200](https://lh3.googleusercontent.com/bnt_9N5qxjVLZoZl3Vxj2Li44PUEQ4FObzidGnCgfBlxVZHHUicwAKFw7wWDg1F-ayMwO3NZ_VNUJw86gTrf5PuQ80Ma806oYn3JCiyTZ7_Cv_cJAW1HKlQzNFw5xYrih38URQMYNQ=w300)
 
 LEX - TEXT SUMMARIZATION AND NLP ENGINE
 LEX is a text summarization tool which allows the user to copy and paste text and summarize its contents. Futhermore, LEX can scrape a webpage (website security options may prevent scraping certain websites), or accept an uploaded file and summarize its contents. This product is currently in development and it is strictly a proof of concept and not optimized for any real time commercial application or insights. If you encounter any any inconsistency or error during the runtime, please get back to us with the error and the dataset so that it can be reproduced and solved. Submit the error message to support@stackmetric.com for anything more. This app is not optimized to summarize less tha 1,000 words and other limitations apply. Let's start analyzing with LEX!
