@@ -6,7 +6,7 @@
 <ul>
 <div id="top"></div>
   
-![Conda](https://img.shields.io/conda/v/conda-forge/python?style=for-the-badge) ![Maintenance](https://img.shields.io/maintenance/yes/2022?style=for-the-badge)
+![Conda](https://img.shields.io/conda/v/conda-forge/python?style=for-the-badge) ![Maintenance](https://img.shields.io/maintenance/yes/2022?style=for-the-badge) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/django?style=for-the-badge)
   
 <!-- ABOUT THE PROJECT -->
 # About The Project
