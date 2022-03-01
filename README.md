@@ -6,7 +6,8 @@
 # About The Project
 <br/>
  
- ![lex_logo](https://user-images.githubusercontent.com/81205746/156106599-a14bf930-aaee-4a85-9ab5-812f2b65d2e0.png)
+![lex_logo](https://user-images.githubusercontent.com/81205746/156106755-dbb6c241-1f67-464c-b603-3cee9b5da394.png)
+
 
 ![lex-200](https://lh3.googleusercontent.com/K_eyKIOSZhM2SRPbSn4tEmv5jmVqbF-RlxFmT3myMPx-DNDKEZZ_JDpDuL-b_zDz3eJbmedzhehiW04Pc7yyNh9ZTkx7bVi1FXE6btpYSPvwzteL-QZsmNKIdjfMj_5JNC_0AfsEAw=w250)
 
