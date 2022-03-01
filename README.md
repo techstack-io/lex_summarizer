@@ -1,8 +1,8 @@
 ![Stackmetric-y](https://user-images.githubusercontent.com/81205746/156105917-a0cd82dc-97af-4e95-a3a6-ba50ad186e12.png)
 
 <p float="left">
-  <img src="https://user-images.githubusercontent.com/81205746/156105917-a0cd82dc-97af-4e95-a3a6-ba50ad186e12.png" width="100" />
-  <img src="/img2.png" width="100" /> 
+  <img src="https://user-images.githubusercontent.com/81205746/156105917-a0cd82dc-97af-4e95-a3a6-ba50ad186e12.png" width="300" />
+  <img src="/img2.png" width="300" /> 
   <img src="/img3.png" width="100" />
 </p>
 
