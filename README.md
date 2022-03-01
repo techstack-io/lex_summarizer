@@ -5,7 +5,7 @@
 
 <ul>
 <div id="top"></div>
-
+![Conda](https://img.shields.io/conda/v/conda-forge/python?style=for-the-badge)
 <!-- ABOUT THE PROJECT -->
 # About The Project
 <br/>
