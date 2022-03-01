@@ -3,8 +3,8 @@
 <div id="top"></div>
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
-
+# About The Project
+<br/>
 ![lex-200](https://lh3.googleusercontent.com/K_eyKIOSZhM2SRPbSn4tEmv5jmVqbF-RlxFmT3myMPx-DNDKEZZ_JDpDuL-b_zDz3eJbmedzhehiW04Pc7yyNh9ZTkx7bVi1FXE6btpYSPvwzteL-QZsmNKIdjfMj_5JNC_0AfsEAw=w200)
 
 LEX - TEXT SUMMARIZATION AND NLP ENGINE
