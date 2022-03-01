@@ -1,6 +1,6 @@
 <p float="left">
   <img src="https://lh3.googleusercontent.com/bnt_9N5qxjVLZoZl3Vxj2Li44PUEQ4FObzidGnCgfBlxVZHHUicwAKFw7wWDg1F-ayMwO3NZ_VNUJw86gTrf5PuQ80Ma806oYn3JCiyTZ7_Cv_cJAW1HKlQzNFw5xYrih38URQMYNQ=w200" width="200" />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="https://user-images.githubusercontent.com/81205746/156105917-a0cd82dc-97af-4e95-a3a6-ba50ad186e12.png" width="200" />
+<!--   <img src="https://user-images.githubusercontent.com/81205746/156105917-a0cd82dc-97af-4e95-a3a6-ba50ad186e12.png" width="200" /> -->
 </p>
 
 <ul>
@@ -13,12 +13,9 @@
 LEX - TEXT SUMMARIZATION AND NLP ENGINE
 LEX is a text summarization tool which allows the user to copy and paste text and summarize its contents. Futhermore, LEX can scrape a webpage (website security options may prevent scraping certain websites), or accept an uploaded file and summarize its contents. This product is currently in development and it is strictly a proof of concept and not optimized for any real time commercial application or insights. If you encounter any any inconsistency or error during the runtime, please get back to us with the error and the dataset so that it can be reproduced and solved. Submit the error message to support@stackmetric.com for anything more. This app is not optimized to summarize less tha 1,000 words and other limitations apply. Let's start analyzing with LEX!
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
+View the app here:
+  
+https://share.streamlit.io/techstack-io/lex_summarizer/main/index.py
 
 Use the `BLANK_README.md` to get started.
 
