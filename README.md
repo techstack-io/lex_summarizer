@@ -8,6 +8,7 @@
  
 ![lex_logo](https://user-images.githubusercontent.com/81205746/156106755-dbb6c241-1f67-464c-b603-3cee9b5da394.png)
 
+![lex_logo](https://user-images.githubusercontent.com/81205746/156107221-e6a67f73-8a2e-4c26-9076-d74111232668.png)
 
 ![lex-200](https://lh3.googleusercontent.com/K_eyKIOSZhM2SRPbSn4tEmv5jmVqbF-RlxFmT3myMPx-DNDKEZZ_JDpDuL-b_zDz3eJbmedzhehiW04Pc7yyNh9ZTkx7bVi1FXE6btpYSPvwzteL-QZsmNKIdjfMj_5JNC_0AfsEAw=w250)
 
