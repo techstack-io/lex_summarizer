@@ -1,9 +1,7 @@
 
 
-![lex_index](https://user-images.githubusercontent.com/81205746/156248488-b9474062-2fc0-4832-aec1-687d188201cd.png)
-
 <p float="center">
-  <img src="https://user-images.githubusercontent.com/81205746/156248488-b9474062-2fc0-4832-aec1-687d188201cd.png" />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+  <center><img src="https://user-images.githubusercontent.com/81205746/156248488-b9474062-2fc0-4832-aec1-687d188201cd.png" /></center>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
 <!--   <img src="https://user-images.githubusercontent.com/81205746/156105917-a0cd82dc-97af-4e95-a3a6-ba50ad186e12.png" width="200" /> -->
 </p>
 
