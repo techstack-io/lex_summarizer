@@ -1,19 +1,15 @@
 
-img[src*='#center'] {
-    display: block;
-    margin: auto;
-}
-
 <p align="center" width="100%">
-  <center><img src="https://user-images.githubusercontent.com/81205746/156248488-b9474062-2fc0-4832-aec1-687d188201cd.png" /></center>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-<!--   <img src="https://user-images.githubusercontent.com/81205746/156105917-a0cd82dc-97af-4e95-a3a6-ba50ad186e12.png#center" width="200" /> -->
+<img src="https://user-images.githubusercontent.com/81205746/156248488-b9474062-2fc0-4832-aec1-687d188201cd.png" />
+<!--   <img src="https://user-images.githubusercontent.com/81205746/156105917-a0cd82dc-97af-4e95-a3a6-ba50ad186e12.png" width="200" /> -->
 </p>
 
 <ul>
 <div id="top"></div>
-  
+
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/django?style=for-the-badge) ![Conda (channel only)](https://img.shields.io/conda/vn/conda-forge/python?color=green&style=for-the-badge) 
-![Maintenance](https://img.shields.io/maintenance/yes/2022?style=for-the-badge) 
+![Maintenance](https://img.shields.io/maintenance/yes/2022?style=for-the-badge)
+
 
   
 <!-- ABOUT THE PROJECT -->
