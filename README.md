@@ -20,19 +20,6 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
-[![Product Name Screen Shot][product-screenshot]](https://img.shields.io/badge/Python-3.8.8-blue)
-
-https://img.shields.io/badge/Python-3.8.8-blue
-
-[![https://img.shields.io/badge/Python-3.8.8-blue][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
