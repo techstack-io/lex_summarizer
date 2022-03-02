@@ -22,8 +22,6 @@ View the app here:
   
 https://share.streamlit.io/techstack-io/lex_summarizer/main/index.py
 
-Use the `BLANK_README.md` to get started.
-
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
