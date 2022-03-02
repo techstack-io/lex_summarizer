@@ -4,7 +4,12 @@ def run():
 
     import streamlit as st
     
-    st.sidebar.header('Libraries:')
+    st.sidebar.header('Built on and with:')
+        # Badges
+    with st.sidebar:
+        st.image("https://img.shields.io/pypi/pyversions/django?style=for-the-badge")
+        st.image("https://img.shields.io/conda/vn/conda-forge/python?color=green&style=for-the-badge")
+        st.image("https://img.shields.io/badge/DASHBOARDING WITH-Streamlit-green?style=for-the-badge")
     with st.sidebar.expander("NLTK"):
         st.write("""Natural Language Toolkit is an open source Python library for Natural Language Processing.""")
     with st.sidebar.expander("Sumy"):
@@ -15,29 +20,18 @@ def run():
  
 
     # --------------------------------- Homepage --------------------------------- #
-    
-    st.header("LEX - TEXT SUMMARIZATION AND NLP ENGINE")
-    st.markdown(""" **LEX** is a text summarization tool which allows the user to copy and paste text and summarize its contents. Futhermore, LEX 
-    can scrape a webpage (website security options may prevent scraping certain websites), or accept an uploaded file and summarize its contents. 
-    This product is currently in development and it is strictly a *proof of concept* and *not optimized for any real time commercial application or insights*. If you encounter any
-    any inconsistency or error during the runtime, please get back to us with the error and the dataset so that it can be reproduced and solved.
-    Submit the error message to **support@stackmetric.com** for anything more.
-    This app is not optimized to summarize less tha 1,000 words and other limitations apply.
-    Let's start analyzing with LEX!."""
-    )
 
-    # Badges
-    st.markdown(
-    "<div align='left'><br>"
-    "<img src='https://img.shields.io/badge/MADE WITH-PYTHON -red?style=for-the-badge'"
-    "alt='API stability' height='25'/>"
-    "<img src='https://img.shields.io/badge/SERVED WITH-Heroku-blue?style=for-the-badge'"
-    "alt='API stability' height='25'/>"
-    "<img src='https://img.shields.io/badge/DASHBOARDING WITH-Streamlit-green?style=for-the-badge'"
-    "alt='API stability' height='25'/></div>"
-    "<br/>",
-    unsafe_allow_html=True,
-    )
+    col1, col2, col3 = st.columns([.25,.50,.25])
+
+    with col2:
+        st.image("https://lh3.googleusercontent.com/mztJpuCGLVw1qnlFWJZfUDFtPq0xZ37NnviJEG2Yi-ivLq3rAF-cFyZycyRZpa7-e2x86p6AD8twK0Dd5JquIf8F6gf7wXoSaxhe3-IC6Vp4LqhaZnBsRcLXuqP_XU-mc8eqTwyoIg=w2400")
+
+
+
+    # st.header("LEX - TEXT SUMMARIZATION AND NLP ENGINE")
+
+    st.write("**LEX** is a text summarization tool which allows the user to copy and paste text and summarize its contents. Futhermore, LEX can scrape a webpage (website security options may prevent scraping certain websites), or accept an uploaded file and summarize its contents. This product is currently in development and it is strictly a *proof of concept* and *not optimized for any real time commercial application or insights*. If you encounter anyany inconsistency or error during the runtime, please get back to us with the error and the dataset so that it can be reproduced and solved.Submit the error message to **support@stackmetric.com** for anything more.  This app is not optimized to summarize less tha 1,000 words and other limitations apply.Let's start analyzing with LEX!.")
+
 
 if __name__ == "__main__":
     run()

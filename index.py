@@ -3,15 +3,15 @@
 #===========================================================================
 
 message = """
-        __NAVIGATION__
+        # __By Stackmetric IO__
         """
 
 import streamlit as st
 # st.set_page_config(layout = "wide") # optional
 
-with st.sidebar:
-    st.image("https://lh3.googleusercontent.com/Ht6ZsQ2-EwM4KguUGdvCAO1YOsVQ0ddvNLjsfluzrilLRA1Iwu2mNzkDaCVTHo-F8sE9gp7XSujGg2guEPgdNd4X_dRcelwJk6l812ya3Z6ozCVVggz_md1lr3cEMFIcwVNN0W2alg=w2400",
-    width=300,)
+# with st.sidebar:
+#     st.image("https://lh3.googleusercontent.com/Ht6ZsQ2-EwM4KguUGdvCAO1YOsVQ0ddvNLjsfluzrilLRA1Iwu2mNzkDaCVTHo-F8sE9gp7XSujGg2guEPgdNd4X_dRcelwJk6l812ya3Z6ozCVVggz_md1lr3cEMFIcwVNN0W2alg=w2400",
+#     width=300,)
 
 import pkgutil
 import importlib
