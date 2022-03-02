@@ -4,6 +4,9 @@ def run():
 
     import streamlit as st
     
+    # with st.sidebar:
+    #     st.image("https://lh3.googleusercontent.com/krCggOscAVoH3C-EBR3_uO-PxmtfVq2VIG7ZCMHq7D4A7opiHh7KznYI8xRaIlYnBMrCoFQS_mFiQXys9rKOUvQJ4RDK3hwUfEtk6Q0hpKrDqhrACANw0vnkHH6UdSdnktnlFdS1fw=w2400")  
+
     st.sidebar.header('Built on and with:')
         # Badges
     with st.sidebar:
@@ -21,14 +24,14 @@ def run():
 
     # --------------------------------- Homepage --------------------------------- #
 
-    col1, col2, col3 = st.columns([.25,.50,.25])
+    col1, col2, col3 = st.columns([12.5,75,12.5])
 
     with col2:
-        st.image("https://lh3.googleusercontent.com/mztJpuCGLVw1qnlFWJZfUDFtPq0xZ37NnviJEG2Yi-ivLq3rAF-cFyZycyRZpa7-e2x86p6AD8twK0Dd5JquIf8F6gf7wXoSaxhe3-IC6Vp4LqhaZnBsRcLXuqP_XU-mc8eqTwyoIg=w2400")
+        st.image("https://lh3.googleusercontent.com/nDOoz4Jb1mkEZWxLOgCoZ2LXmeaL1rmBfJRAKftffgwUSNKaqe-a9_3WzMLaPkB2Qt-k71zaqG14icbC5Pg0DcZ2voKZsWd5uKiwaspyjhqqIv0b_38amdEVJMUTASC7oBZ8JnAnjw=w2400")
 
 
 
-    st.header("LEX - TEXT SUMMARIZATION AND NLP ENGINE")
+    st.header("TEXT SUMMARIZATION AND NLP ENGINE")
 
     st.write("**LEX** is a text summarization tool which allows the user to copy and paste text and summarize its contents. Futhermore, LEX can scrape a webpage (website security options may prevent scraping certain websites), or accept an uploaded file and summarize its contents. This product is currently in development and it is strictly a *proof of concept* and *not optimized for any real time commercial application or insights*. If you encounter anyany inconsistency or error during the runtime, please get back to us with the error and the dataset so that it can be reproduced and solved.Submit the error message to **support@stackmetric.com** for anything more.  This app is not optimized to summarize less tha 1,000 words and other limitations apply.Let's start analyzing with LEX!.")
 
