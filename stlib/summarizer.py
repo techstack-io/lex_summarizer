@@ -262,8 +262,6 @@ def run():
                     x_axis = list(keys)
                     y_axis = list(val)
 
-                    st.write(word2count)
-
                     highF = "The word that appears the most is " + x_axis[0]
                     numx = y_axis[0]
                     numF = "It has a weight of {numx} which makes is the most important word in this article".format(numx=numx)
