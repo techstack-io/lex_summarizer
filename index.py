@@ -10,8 +10,7 @@ import streamlit as st
 # st.set_page_config(layout = "wide") # optional
 
 # with st.sidebar:
-#     st.image("https://lh3.googleusercontent.com/Ht6ZsQ2-EwM4KguUGdvCAO1YOsVQ0ddvNLjsfluzrilLRA1Iwu2mNzkDaCVTHo-F8sE9gp7XSujGg2guEPgdNd4X_dRcelwJk6l812ya3Z6ozCVVggz_md1lr3cEMFIcwVNN0W2alg=w2400",
-#     width=300,)
+#     st.image("https://lh3.googleusercontent.com/nDOoz4Jb1mkEZWxLOgCoZ2LXmeaL1rmBfJRAKftffgwUSNKaqe-a9_3WzMLaPkB2Qt-k71zaqG14icbC5Pg0DcZ2voKZsWd5uKiwaspyjhqqIv0b_38amdEVJMUTASC7oBZ8JnAnjw=w250")
 
 import pkgutil
 import importlib

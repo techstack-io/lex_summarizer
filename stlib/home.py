@@ -5,7 +5,7 @@ def run():
     import streamlit as st
     
     # with st.sidebar:
-    #     st.image("https://lh3.googleusercontent.com/krCggOscAVoH3C-EBR3_uO-PxmtfVq2VIG7ZCMHq7D4A7opiHh7KznYI8xRaIlYnBMrCoFQS_mFiQXys9rKOUvQJ4RDK3hwUfEtk6Q0hpKrDqhrACANw0vnkHH6UdSdnktnlFdS1fw=w2400")  
+    #     st.image("https://lh3.googleusercontent.com/nDOoz4Jb1mkEZWxLOgCoZ2LXmeaL1rmBfJRAKftffgwUSNKaqe-a9_3WzMLaPkB2Qt-k71zaqG14icbC5Pg0DcZ2voKZsWd5uKiwaspyjhqqIv0b_38amdEVJMUTASC7oBZ8JnAnjw=w300")  
 
     st.sidebar.header('Built on and with:')
         # Badges
@@ -27,7 +27,7 @@ def run():
     col1, col2, col3 = st.columns([12.5,75,12.5])
 
     with col2:
-        st.image("https://lh3.googleusercontent.com/nDOoz4Jb1mkEZWxLOgCoZ2LXmeaL1rmBfJRAKftffgwUSNKaqe-a9_3WzMLaPkB2Qt-k71zaqG14icbC5Pg0DcZ2voKZsWd5uKiwaspyjhqqIv0b_38amdEVJMUTASC7oBZ8JnAnjw=w2400")
+        st.image("https://lh3.googleusercontent.com/5XLeASxlnhN_3iYtrVf2Z8Dhw7QyoRKqJbVI832d8ZWM26PYM3WUb6GR_9tqw3yV_9b2YsN2vgtRqef3vEA5Aem7Gfmi-DDPkKyif-E_2fF2HjXUX3rrorB3kEcFT6C5NhBsbls=w2000")
 
 
 
