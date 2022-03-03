@@ -188,10 +188,11 @@ def run():
                     clean_text = re.sub(r'\d', ' ', clean_text)
                     clean_text = re.sub(r'\s+', ' ', clean_text)
 
+                    nltk.download('stopwords')
+
                     stopwords = nltk.corpus.stopwords.words('english')
                     word_frequency = nltk.FreqDist(nltk.word_tokenize(clean_text))
                     sentences = nltk.sent_tokenize(text)
-
 
                     # Create a `dictionary` and name it word2count where words [keys] and counts [values]
                     word2count = {}
