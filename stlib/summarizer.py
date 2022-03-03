@@ -188,6 +188,7 @@ def run():
                     clean_text = re.sub(r'\d', ' ', clean_text)
                     clean_text = re.sub(r'\s+', ' ', clean_text)
 
+                    nltk.download('punkt')
                     nltk.download('stopwords')
 
                     stopwords = nltk.corpus.stopwords.words('english')
