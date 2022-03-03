@@ -41,7 +41,7 @@ def run():
      ('---', 'Input Text', 'Paste a Link','Upload File'))
     
     s_example = "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a line in section 1.10.32.The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from de Finibus Bonorum et Malorum by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham."
-
+    
     # -------------------------------- Text Input -------------------------------- #
 
     if option == 'Input Text':
@@ -63,7 +63,7 @@ def run():
 
                     nltk.download('punkt')
                     nltk.download('stopwords')
-                    
+
                     # Clean Text
                     clean_text = text.lower()
                     clean_text = re.sub(r'\W', ' ', clean_text)
@@ -108,7 +108,7 @@ def run():
                     st.write(summary)
                     # Wordcloud
                     st.write("Word Cloud")
-                    
+                    st.set_option('deprecation.showPyplotGlobalUse', False)
                     wordcloud = WordCloud(background_color = "#f2f8fb", width=800, height=400).generate(summary)
                     plt.imshow(wordcloud, interpolation='bilinear')
                     plt.axis("off")
@@ -116,7 +116,7 @@ def run():
                     # st.pyplot()
 
                     # Plotly Charts #
-                    
+
                     # --- Lists 
 
                     # Convert word2count dict to a list
@@ -144,7 +144,7 @@ def run():
                     # This will be our x and y axis for our chart
                     x_axis = list(keys)
                     y_axis = list(val)
-
+                    
                     fig = px.bar(x=x_axis, y=y_axis, labels=dict(x="Words", y="Weight", color="Place"))
                     st.subheader('Weighted Words')
                     st.plotly_chart(fig)
@@ -261,6 +261,15 @@ def run():
                     # This will be our x and y axis for our chart
                     x_axis = list(keys)
                     y_axis = list(val)
+
+                    st.write(word2count)
+
+                    highF = "The word that appears the most is " + x_axis[0]
+                    numx = y_axis[0]
+                    numF = "It has a weight of {numx} which makes is the most important word in this article".format(numx=numx)
+                    
+                    st.subheader(highF)
+                    st.subheader(numF)
 
                     fig = px.bar(x=x_axis, y=y_axis, labels=dict(x="Words", y="Weight", color="Place"))
                     st.subheader('Weighted Words')
