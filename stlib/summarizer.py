@@ -144,11 +144,22 @@ def run():
                     # This will be our x and y axis for our chart
                     x_axis = list(keys)
                     y_axis = list(val)
-                    
+
+                    st.write(highest_frequency)
+
                     fig = px.bar(x=x_axis, y=y_axis, labels=dict(x="Words", y="Weight", color="Place"))
                     st.subheader('Weighted Words')
                     st.plotly_chart(fig)
 
+                    highF = "The word that appears the most is " + x_axis[0]
+                    numy = highest_frequency
+                    numx = y_axis[0]
+                    numofx = x_axis[0] + " appears {numy} times".format(numy=numy, numx=numx) 
+                    numF = x_axis[0] + " also has a weight of {numx} which makes is the most important word in this article".format(numx=numx)
+                    
+                    st.subheader(highF)
+                    st.subheader(numofx)
+                    st.subheader(numF)
                     # END Tex Input #
 
     # -------------------------------- Link Input -------------------------------- #
@@ -263,18 +274,19 @@ def run():
                     y_axis = list(val)
 
                     highF = "The word that appears the most is " + x_axis[0]
+                    numy = highest_frequency
                     numx = y_axis[0]
-                    numF = "It has a weight of {numx} which makes is the most important word in this article".format(numx=numx)
+                    numofx = x_axis[0] + " appears {numy} times".format(numy=numy, numx=numx) 
+                    numF = x_axis[0] + " also has a weight of {numx} which makes is the most important word in this article".format(numx=numx)
                     
                     st.subheader(highF)
+                    st.subheader(numofx)
                     st.subheader(numF)
 
                     fig = px.bar(x=x_axis, y=y_axis, labels=dict(x="Words", y="Weight", color="Place"))
                     st.subheader('Weighted Words')
                     st.plotly_chart(fig)
-
-                    # END Tex Input #
-               
+                    # END Tex Input #        
             else:
                 st.error('Please enter a valid link')
 
