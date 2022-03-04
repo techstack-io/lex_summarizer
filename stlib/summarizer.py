@@ -273,10 +273,10 @@ def run():
                     x_axis = list(keys)
                     y_axis = list(val)
 
-                    highF = "The word that appears the most is " + x_axis[0]
+                    highF = "The word that appears the most in the article is " + x_axis[0]
                     numy = highest_frequency
                     numx = y_axis[0]
-                    numofx = x_axis[0] + " appears {numy} times".format(numy=numy, numx=numx) 
+                    numofx = x_axis[0] + " - It appears {numy} times".format(numy=numy, numx=numx) 
                     numF = x_axis[0] + " also has a weight of {numx} which makes is the most important word in this article".format(numx=numx)
                     
                     st.subheader(highF)
