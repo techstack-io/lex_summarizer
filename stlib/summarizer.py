@@ -242,14 +242,7 @@ def run():
                         summary = ' '.join(best_sentences)
                         summary
                         st.write(summary)
-                        st.write("Word Cloud")
-                        st.set_option('deprecation.showPyplotGlobalUse', False)
-                        wordcloud = WordCloud(background_color = "#f2f8fb", width=800, height=400).generate(summary)
-                        plt.imshow(wordcloud, interpolation='bilinear')
-                        plt.axis("off")
-                        # plt.show()
-                        # st.pyplot()
-                        
+
                         # ------------------------------- Plotly Charts ------------------------------ #
 
                         # ------------ Lists ------------- #
