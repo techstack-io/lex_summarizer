@@ -43,10 +43,11 @@ def run():
     # option = st.selectbox(
     #  'Please select input method below:',
     #  ('---', 'Input Text', 'Paste a Link','Upload File'))
-    
+
     s_example = "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a line in section 1.10.32.The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from de Finibus Bonorum et Malorum by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham."
-    
+
     # -------------------------------- Text Input -------------------------------- #
+
     if model == 'Frequency Based':
         option = st.selectbox(
         'Please select input method below:',
@@ -163,7 +164,7 @@ def run():
                         numx = y_axis[0]
                         numofx = x_axis[0] + " - It appears {numy} times".format(numy=numy, numx=numx) 
                         numF = x_axis[0] + " also has a weight of {numx} which makes is the most important word in this article".format(numx=numx)
-                        
+
                         st.subheader(highF)
                         st.subheader(numofx)
                         st.subheader(numF)
@@ -278,7 +279,7 @@ def run():
                         numx = y_axis[0]
                         numofx = "The word " + x_axis[0] + " appears {numy} times".format(numy=numy, numx=numx) 
                         numF = x_axis[0] + " also has a weight of {numx} which makes is the most important word in this article".format(numx=numx)
-                        
+
                         st.subheader(highF)
                         st.subheader(numofx)
                         st.subheader(numF)
@@ -291,10 +292,6 @@ def run():
                     st.error('Please enter a valid link')
 
 
-# end of app
-
-# This code allows you to run the app standalone
-# as well as part of a library of apps
 if __name__ == "__main__":
     run()
 
