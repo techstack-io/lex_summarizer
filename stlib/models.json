@@ -1,8 +1,0 @@
-
-{
-    "Select a model ":" --- ",
-    "Flesch Reading Ease":"Flesch (flesch_reading_ease)",
-    "Flesch/Kincaid Grade":"Flesch-Kincaid (flesch_kincaid_grade)",
-    "Smog Index":"Smog (smog_index)",
-    "Coleman/Liau Index":"Coleman-Liau (coleman_liau_index)"
-}

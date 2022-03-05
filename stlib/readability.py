@@ -1,3 +1,6 @@
+# ---------------------------------------------------------------------------- #
+#          Stackmetric IO - Copyright ©️ 2022 All Rights Reserved.         #
+# ---------------------------------------------------------------------------- #
 
 def run():
  
@@ -14,35 +17,56 @@ def run():
     import nltk
     import re
 
-  
+
+    st.sidebar.header('Readability Models:')
+
+    # Models
+    with st.sidebar.expander("Flesch Reading Ease"):
+        st.write("""The Flesch Reading Ease Formula is a simple approach to assess the grade-level of the reader. It’s also one of the few accurate measures around that we can rely on without too much scrutiny. This formula is best used on school text. It has since become a standard readability formula used by many US Government Agencies, including the US Department of Defense. However, primarily, we use the formula to assess the difficulty of a reading passage written in English.""")
+        st.image("https://lh3.googleusercontent.com/pnRwfUWRbgnhq9tcIhjoUFG5tnvLwEu3lpS7ecaSruTADHKaS2BjwRAwmD14G43jn89Jga5qW5HzTd8AODw5YfCnT1QWK35KP4ngvTMfUxqHJhB2H6ZUsK_gcnhRDjYheR4NRbc=w2400")
+    
+    with st.sidebar.expander("Flesch Kincaid Grade"):
+        st.write("""The Flesch Kincaid Grade Level is a widely used readability formula which assesses the approximate reading grade level of a text. It was developed by the US Navy who worked with the Flesch Reading Ease. If a text has a Flesch Kincaid level of 8, this means the reader needs a grade 8 level of reading or above to understand it. Even if they’re an advanced reader, it means the content is less time-consuming to read. """)
+    
+    with st.sidebar.expander("BERT"):
+        st.write("""BERT (Bidirectional tranformer) is a transformer used to overcome the limitations of RNN and other neural networks as Long term dependencies. It is a pre-trained model that is naturally bidirectional. This pre-trained model can be tuned to easily to perform the NLP tasks as specified, Summarization in our case.""")
     # select = st.radio(
     # 'Please select an option:',
     # ('URL', 'Enter or paste text'))
 
-    c1, c2 = st.columns([.33, .66])
+    st.header("READABILITY MODELS")
+
+    c1, c2 = st.columns([.50, .50])
 
     with c1:
-        ModelType = st.radio(
-            "Choose your model",
-            ["Flesch Reading Ease", "Flesch/Kincaid Grade", "Smog Index", "Coleman/Liau Index" ],
-            help="Choose from 4 models",
-        )
 
-   
+        ModelType = st.selectbox(
+        'Please select a model below:',
+        ("---", "Flesch Reading Ease", "Flesch/Kincaid Grade", "Smog Index", "Coleman/Liau Index"))
+
         if ModelType == "Flesch Reading Ease":
-            
-            source_txt = st.text_input("")
-            
-            if st.button('GO'):
-                ease = textstat.flesch_reading_ease(source_txt)
-                st.subheader(ease)      
-            
-            @st.cache(allow_output_mutation=True)
-            def load_model():
-                source_txt = st.text_input("")
-                ease = textstat.flesch_reading_ease(source_txt)
-                return ease
-            
+            Method = st.selectbox(
+            'Please select a method of input:',
+            ("---", "Text", "URL"))
+
+            if Method == "Text":
+                text_input = st.text_area("", max_chars=10000, height=330)
+
+                if st.button("GO"):
+                    if len(text_input) != 0:
+                        with st.spinner('Processing...'):
+                            time.sleep(2)
+                            ease = textstat.flesch_reading_ease(text_input)
+                            st.subheader(ease)
+                            fre_score = "The Flesch Reading Ease score for this text is {ease}".format(ease=ease)
+                            st.write(fre_score)
+                            
+                            if 0 <= ease <= 30:
+                                st.write("This text is very difficult to read, and best understood by university graduates. View the readability table under 'Readability Models' for more information")
+                    else:
+                        st.error("Please enter some text")
+
+
 
     # with c2:
     #     doc = st.text_input("Paste your text below (max 500 words)")
@@ -141,11 +165,6 @@ def run():
         #         st.error('Please enter a valid link')
   
 
-
-# end of app
-
-# This code allows you to run the app standalone
-# as well as part of a library of apps
 if __name__ == "__main__":
     run()
 
