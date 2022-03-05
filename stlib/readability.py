@@ -39,10 +39,11 @@ def run():
     c1, c2 = st.columns([.50, .50])
 
     with c1:
-
         ModelType = st.selectbox(
         'Please select a model below:',
-        ("---", "Flesch Reading Ease", "Flesch/Kincaid Grade", "Smog Index", "Coleman/Liau Index"))
+        ("---", "Flesch Reading Ease", "Flesch Kincaid Grade", "Smog Index", "Coleman Liau Index"))
+
+        # ------------------------- Flesch Reading Ease Model ------------------------ #
 
         if ModelType == "Flesch Reading Ease":
             Method = st.selectbox(
@@ -51,7 +52,6 @@ def run():
 
             if Method == "Text":
                 text_input = st.text_area("", max_chars=10000, height=330)
-
                 if st.button("GO"):
                     if len(text_input) != 0:
                         with st.spinner('Processing...'):
@@ -60,12 +60,34 @@ def run():
                             st.subheader(ease)
                             fre_score = "The Flesch Reading Ease score for this text is {ease}".format(ease=ease)
                             st.write(fre_score)
-                            
                             if 0 <= ease <= 30:
                                 st.write("This text is very difficult to read, and best understood by university graduates. View the readability table under 'Readability Models' for more information")
+
                     else:
                         st.error("Please enter some text")
 
+           # --------------------------- Flesch Kincaid Grade --------------------------- #
+
+        if ModelType == "Flesch Kincaid Grade":
+            Method = st.selectbox(
+            'Please select a method of input:',
+            ("---", "Text", "URL"))
+
+                # if Method == "Text":
+                #     text_input = st.text_area("", max_chars=10000, height=330)
+                #     if st.button("GO"):
+                #         if len(text_input) != 0:
+                #             with st.spinner('Processing...'):
+                #                 time.sleep(2)
+                #                 ease = textstat.flesch_reading_ease(text_input)
+                #                 st.subheader(ease)
+                #                 fre_score = "The Flesch Reading Ease score for this text is {ease}".format(ease=ease)
+                #                 st.write(fre_score)
+                #                 if 0 <= ease <= 30:
+                #                     st.write("This text is very difficult to read, and best understood by university graduates. View the readability table under 'Readability Models' for more information")
+                #         else:
+                #             st.error("Please enter some text")
+                # grade = textstat.flesch_kincaid_grade(text)
 
 
     # with c2:
