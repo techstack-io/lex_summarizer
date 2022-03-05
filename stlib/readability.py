@@ -49,7 +49,6 @@ def run():
             Method = st.selectbox(
             'Please select a method of input:',
             ("---", "Text", "URL"))
-
             if Method == "Text":
                 text_input = st.text_area("", max_chars=10000, height=330)
                 if st.button("GO"):
@@ -62,7 +61,6 @@ def run():
                             st.write(fre_score)
                             if 0 <= ease <= 30:
                                 st.write("This text is very difficult to read, and best understood by university graduates. View the readability table under 'Readability Models' for more information")
-
                     else:
                         st.error("Please enter some text")
 
@@ -72,22 +70,17 @@ def run():
             Method = st.selectbox(
             'Please select a method of input:',
             ("---", "Text", "URL"))
-
-                # if Method == "Text":
-                #     text_input = st.text_area("", max_chars=10000, height=330)
-                #     if st.button("GO"):
-                #         if len(text_input) != 0:
-                #             with st.spinner('Processing...'):
-                #                 time.sleep(2)
-                #                 ease = textstat.flesch_reading_ease(text_input)
-                #                 st.subheader(ease)
-                #                 fre_score = "The Flesch Reading Ease score for this text is {ease}".format(ease=ease)
-                #                 st.write(fre_score)
-                #                 if 0 <= ease <= 30:
-                #                     st.write("This text is very difficult to read, and best understood by university graduates. View the readability table under 'Readability Models' for more information")
-                #         else:
-                #             st.error("Please enter some text")
-                # grade = textstat.flesch_kincaid_grade(text)
+            if Method == "Text":
+                text_input = st.text_area("", max_chars=10000, height=330)
+                if st.button("GO"):
+                    if len(text_input) != 0:
+                        with st.spinner('Processing...'):
+                            time.sleep(2)
+                            grade = textstat.flesch_kincaid_grade(text_input)
+                            st.subheader(grade)
+                    else:
+                        st.error("Please enter some text")
+     
 
 
     # with c2:
