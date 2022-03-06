@@ -36,13 +36,13 @@ def run():
 
     st.header("READABILITY MODELS")
 
-    c1, c2 = st.columns([.50, .50])
+    c = st.container()
 
-    with c1:
+    with c:
         ModelType = st.selectbox(
         'Please select a model below:',
         ("---", "Flesch Reading Ease", "Flesch Kincaid Grade", "Smog Index", "Coleman Liau Index"))
-
+        
         # ------------------------- Flesch Reading Ease Model ------------------------ #
 
         if ModelType == "Flesch Reading Ease":
@@ -59,8 +59,12 @@ def run():
                             st.subheader(ease)
                             fre_score = "The Flesch Reading Ease score for this text is {ease}".format(ease=ease)
                             st.write(fre_score)
-                            if 0 <= ease <= 30:
+                            if 0 <= ease <= 10:
+                                st.write("This text is extremely difficult to read, and is best understood by university graduates.")
+                                st.components.v1.iframe("//plotly.com/~stackmetric/21.embed",  width=700, height=400, scrolling=False)
+                            elif 10 <= ease <= 30:
                                 st.write("This text is very difficult to read, and best understood by university graduates. View the readability table under 'Readability Models' for more information")
+                                st.components.v1.iframe("//plotly.com/~stackmetric/19.embed",  width=700, height=400, scrolling=False)
                     else:
                         st.error("Please enter some text")
 
