@@ -52,21 +52,34 @@ def run():
             if Method == "Text":
                 text_input = st.text_area("", max_chars=10000, height=330)
                 if st.button("GO"):
-                    if len(text_input) != 0:
+                    if len(text_input) != 0 and len(text_input) > 1000:
                         with st.spinner('Processing...'):
                             time.sleep(2)
                             ease = textstat.flesch_reading_ease(text_input)
                             st.subheader(ease)
                             fre_score = "The Flesch Reading Ease score for this text is {ease}".format(ease=ease)
                             st.write(fre_score)
-                            if 0 <= ease <= 10:
-                                st.write("This text is extremely difficult to read, and is best understood by university graduates.")
+                            # between 1,000 and 10,000 characters
+                            if ease < 0:
+                                st.write("Extremely complex texts could have a negative score. Lower and negative scores represent a text with more complexity. Typically, though, most texts will fit within a range of 10 to 100. A score between 60 and 70 would be average.")
+                            elif 0 <= ease <= 10:
+                                st.write("This text is extremely difficult to read, and is considered a scholarly article. View the complete readability table under 'Readability Models'.")
                                 st.components.v1.iframe("//plotly.com/~stackmetric/21.embed",  width=700, height=400, scrolling=False)
+                                st.subheader("Try another model? Select from the models above.")
                             elif 10 <= ease <= 30:
-                                st.write("This text is very difficult to read, and best understood by university graduates. View the readability table under 'Readability Models' for more information")
+                                st.write("This text is very difficult to read, and best understood by college students. View the complete readability table under 'Readability Models'.")
+                                st.components.v1.iframe("//plotly.com/~stackmetric/19.embed",  width=700, height=400, scrolling=False)
+                            elif 30 <= ease <= 50:
+                                st.write("This text is difficult to read, and best understood by university graduates. View the complete readability table under 'Readability Models'.")
+                                st.components.v1.iframe("//plotly.com/~stackmetric/25.embed",  width=700, height=400, scrolling=False)
+                            elif 50 <= ease <= 60:
+                                st.write("This text is fairly difficult to read. View the complete readability table under 'Readability Models'.")
+                                st.components.v1.iframe("//plotly.com/~stackmetric/19.embed",  width=700, height=400, scrolling=False)
+                            elif 60 <= ease <= 70:
+                                st.write("This text is easily understood by 13 to 15 year old students. If you're a content writer, this is your sweet spot. View the complete readability table under 'Readability Models'.")
                                 st.components.v1.iframe("//plotly.com/~stackmetric/19.embed",  width=700, height=400, scrolling=False)
                     else:
-                        st.error("Please enter some text")
+                        st.error("Please enter a minimum of 1,000 characters")
 
            # --------------------------- Flesch Kincaid Grade --------------------------- #
 
