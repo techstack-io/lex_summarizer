@@ -1,0 +1,13 @@
+streamlit
+nltk
+wordcloud
+plotly
+chart-studio
+matplotlib
+scipy
+pandas
+numpy
+validators
+beautifulsoup4
+requests
+lxml
