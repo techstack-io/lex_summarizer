@@ -1,17 +1,22 @@
 name: stats
+
 dependencies:
-  - python
+  - python=3.10
   - pip
   - pip:
-    - numpy
-    - pandas
-    - streamlit
-    - nltk
-    - wordcloud
-    - plotly.express
-    - chart_studio
-    - bs4
-    - lxml
-    - streamlit-lottie
-    - textstat
-    - srsly
+      - numpy
+      - pandas
+      - streamlit
+      - nltk
+      - wordcloud
+      - plotly
+      - chart-studio
+      - beautifulsoup4
+      - lxml
+      - streamlit-lottie
+      - textstat
+      - srsly
+      - validators
+      - scipy
+      - matplotlib
+      - requests
